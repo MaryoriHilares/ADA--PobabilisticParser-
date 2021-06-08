@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 #include <list>
+#include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -31,6 +33,7 @@ class EarleyState{//la situacion en la que se encuentra el punto
         int indicePunto;//posicion del punto
         int indiceChart;//ya que chart es un arreglo de estados {S(0),S(1),S(2),S(3)}
         int estadoChart;// 0 , 1 , 2
+        int Chart[size];
         EarleyState* staterefence;//guarda la referencia con respecto al estado  
         list<Production> lista_anteriores;//solo para la operacion "complete" pero dentro de un mismo chart
 
@@ -44,8 +47,18 @@ class EarleyState{//la situacion en la que se encuentra el punto
 
         void earleyparser(string cadena , list<Production>* gramatica){
             init(cadena);
-
+            indiceChart = 0;
+            for(;indiceChart < Chart.size(); indiceChart++){
+                EarleyState* earleystate;
+                //earleystate = 
+            }
         }
+
+        /*void predictor()
+        void completer()
+        void scaneer()
+        */
+        
 };
 
 #endif
