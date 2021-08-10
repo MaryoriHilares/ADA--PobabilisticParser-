@@ -1,0 +1,25 @@
+Entrada: S . InitialNodeState
+Entrada: listProd . List of Production’s reference
+Entrada: Input . Input tokenized to be analized
+    DummyOperator(Chart,S)
+    indexChart ← 0
+    Para cada indexChart < Chart.size() hacer:
+        earleyState ← char.get(indexChart)
+        Si stopCondition(earleyState,S,input.size)) entonces
+            Retorna
+        Fin Si
+
+        Si Predictor.isApplicable(earleyState,input) entonces
+            Predictor.apply(earleyState, Chart)
+        Si no, Si Completer.isApplicable(earleyState,input) entonces
+            Completer.apply(earleyState, Chart)
+        Si no, Si Scanner.isApplicable(earleyState,input) entonces
+            SCANNER.apply(earleyState, Chart)
+indice de la lista de producciones que maneja del grammar
+            scanner(cadena, gramatica);
+        Fin Si
+Fin Para
+Si indexChart = Chart.size() entonces
+    Retorna Null
+Fin Si
+Retorna Chart
